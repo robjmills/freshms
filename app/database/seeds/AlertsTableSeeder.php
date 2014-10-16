@@ -5,7 +5,8 @@ class AlertsTableSeeder extends Seeder {
 	public function run()
 	{
         Alert::create([
-            'label' =>  'OOH'
+            'label' =>  'OOH',
+            'organisation_id'   =>  '1'
         ]);
 	}
 
