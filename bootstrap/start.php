@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
     'production' => array('fragrant-brook'),
-    'local' => array('homestead', '.local')
+    'local' => array('homestead', '.local','Robs-rMBP.local')
 ));
 
 /*
