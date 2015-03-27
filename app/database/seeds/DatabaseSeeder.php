@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('OrganisationsTableSeeder');
-		$this->call('UsersTableSeeder');
 		$this->call('AlertsTableSeeder');
+		$this->call('UsersTableSeeder');
         // $this->call('AssetsTableSeeder'); // no point seeding assets when actual file won't exist
 	}
 
