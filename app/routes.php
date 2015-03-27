@@ -70,9 +70,24 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
                     /**
                      * it's all good
                      */
+
+                    $sid = "AC1b13d8272d023e7be2985b4291069767"; // Your Account SID from www.twilio.com/user/account
+                    $token = "dccc17cff28c88f1bde2107a9d0d0742"; // Your Auth Token from www.twilio.com/user/account
+
+                    foreach ( $alert->users as $user ) {
+
+                        $client = new Services_Twilio($sid, $token);
+                        $message = $client->account->messages->sendMessage(
+                            '+441902504251', // From a valid Twilio number
+                            $user->mobile, // Text this number
+                            "Test SMS"
+                        );
+
+                    }
+
                     $response = Response::json([
                             'error' => false,
-                            'message' => 'OK',
+                            'message' => $message,
                             'code' => 200],
                         200
                     );
