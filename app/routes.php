@@ -24,13 +24,8 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
     Route::post('/notify/{alertid}', function ($alertid) {
 
         $payload = Request::header('authorization');
-        /**
-         * Decode auth header - may need htaccess to make this work on Fortrabbit and other fpm based hosts
-         * http://fortrabbit.com/docs/how-to/php/use-http-auth
-         * could actually use this $_SERVER['PHP_AUTH_USER']
-         */
-        $auth_parts = explode(':',base64_decode(substr($payload, 6)));
-        $organisation =  Organisation::where('api_token',$auth_parts[0])->first();
+        $auth = $_SERVER['PHP_AUTH_USER'];
+        $organisation =  Organisation::where('api_token',$auth)->first();
 
         /**
          * No auth header or auth header incorrect
