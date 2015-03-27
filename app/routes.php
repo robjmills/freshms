@@ -85,7 +85,7 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
 
                     }
 
-                    if($message){
+                    if(isset($message)){
                         $response = Response::json([
                                 'error' => false,
                                 'message' => $message,
