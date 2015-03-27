@@ -85,12 +85,16 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
 
                     }
 
-                    $response = Response::json([
-                            'error' => false,
-                            'message' => $message,
-                            'code' => 200],
-                        200
-                    );
+                    if($message){
+                        $response = Response::json([
+                                'error' => false,
+                                'message' => $message,
+                                'code' => 200],
+                            200
+                        );
+                    } else {
+                        dd($client);
+                    }
                 }
             }
         }
