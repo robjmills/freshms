@@ -78,7 +78,7 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
 
                         $client = new Services_Twilio($sid, $token);
                         $message = $client->account->messages->sendMessage(
-                            '+441902504251', // From a valid Twilio number
+                            '+441462600084', // From a valid Twilio number
                             $user->mobile, // Text this number
                             "Test SMS"
                         );
