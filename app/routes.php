@@ -71,8 +71,8 @@ Route::group(['prefix' => 'api/v1'/*, 'before' => 'auth.token'*/], function() {
                      * it's all good
                      */
 
-                    $sid = "AC1b13d8272d023e7be2985b4291069767"; // Your Account SID from www.twilio.com/user/account
-                    $token = "dccc17cff28c88f1bde2107a9d0d0742"; // Your Auth Token from www.twilio.com/user/account
+                    $sid = "AC86b346490b1b5abc79c6f67d3eabc183"; // Your Account SID from www.twilio.com/user/account
+                    $token = "3ea8daef4651761f45327720c89b8036"; // Your Auth Token from www.twilio.com/user/account
 
                     foreach ( $alert->users as $user ) {
 
